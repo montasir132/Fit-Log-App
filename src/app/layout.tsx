@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Oswald } from 'next/font/google';
 import "./globals.css";
 import Navigation from "./components/universal/Navigation";
+import Footer from "./components/universal/footer";
 
 const oswald = Oswald({
   subsets: ['latin'],
@@ -25,10 +26,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <main className="">
           <Navigation/>
+          <div>
+            {children}
+          </div>
+          <Footer/>
         </main>
-        <div>
-          {children}
-        </div>
       </body>
     </html>
   );
