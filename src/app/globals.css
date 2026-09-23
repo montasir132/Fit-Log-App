@@ -1,2 +1,7 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: all;
+}
+@theme {
+  --font-oswald: var(--font-oswald), sans-serif;
+}
