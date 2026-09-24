@@ -17,7 +17,7 @@ const WorkoutsLibrary = () => {
                 FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
                 into today&apos;s plan, and watch the week&apos;s work add up.
                 </p>
-                <Link href="/">
+                <Link href="#ExerciseLibCard">
                 <button className="btn border-none bg-[#C2F800] px-6 py-3 text-black hover:bg-[#b5e600]">
                     BROWSE WORKOUTS
                 </button>
