@@ -1,6 +1,7 @@
 import { IExercise } from '@/types/exercise';
 import Image from 'next/image';
-import { FaRegCalendarCheck } from 'react-icons/fa';
+import AddTodayPlanBtn from '../btnInteraction/addTodayPlanBtn';
+import SaveForLater from '../btnInteraction/saveForLaterBtn';
 interface IExerciseLibDetailsProps {
     exercise: IExercise;
 }
@@ -101,29 +102,9 @@ const ExerciseLibDetailsCard = ({ exercise }: IExerciseLibDetailsProps) => {
 
                     {/* Actions */}
                     <div className="flex flex-wrap gap-3 pt-2">
-                        <button
-                            type="button"
-                            className="flex items-center gap-2 px-5 py-3 rounded-full bg-[#CCFF00] text-[#0F1115] text-sm font-semibold">
-                            <FaRegCalendarCheck />
-                            Add to today&apos;s plan
-                        </button>
-                        <button
-                            type="button"
-                            className="flex items-center gap-2 px-5 py-3 rounded-full border border-[#E5E7EB] text-[#FFFFFF] text-sm font-semibold">
-                            <svg
-                                width="16"
-                                height="16"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            >
-                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                            </svg>
-                            Save for later
-                        </button>
+
+                        <AddTodayPlanBtn exercise = {exercise} />
+                        <SaveForLater exercise = {exercise}/>
                     </div>
                 </div>
             </div>
