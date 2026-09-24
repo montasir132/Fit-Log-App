@@ -7,9 +7,9 @@ interface IExerciseLibCardProps {
     exercise: IExercise;
 }
 const ExerciseLibCard = ({exercise}:IExerciseLibCardProps) => {
-    const {image, name, muscleGroups, equipment, caloriesBurned, rating} = exercise
+    const {id, image, name, muscleGroups, equipment, caloriesBurned, rating} = exercise
     return (
-        <Link href='/id'>
+        <Link href={`/${id}`}>
             <div className="overflow-hidden rounded-2xl border border-[#292D35] bg-[#191C22] shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#C2F800]">
                 {/* Image */}
                 <div>
