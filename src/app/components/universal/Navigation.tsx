@@ -37,7 +37,7 @@ const Navigation = () => {
     );
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-[#1A1D24] backdrop-blur-md">
+        <header className="sticky top-0 z-50 w-full bg-[#0F1115CC] border-b border-[#1B1F28] backdrop-blur-md">
             <div className="navbar container mx-auto min-h-20 px-4 sm:px-6 lg:px-8">
                 <div className="navbar-start gap-2">
                         <div className="dropdown lg:hidden">
@@ -64,7 +64,7 @@ const Navigation = () => {
 
                             <ul
                             tabIndex={-1}
-                            className="menu dropdown-content z-100 mt-3 w-52 rounded-xl border border-[#1C1F26] p-3 shadow-2xl"
+                            className="menu dropdown-content z-100 mt-3 w-52 rounded-xl bg-[#0F1115CC] border border-[#1B1F28] p-3 shadow-2xl"
                             >
                             {navLink}
                             </ul>
