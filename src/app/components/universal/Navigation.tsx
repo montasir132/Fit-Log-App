@@ -1,38 +1,21 @@
 "use client";
 
+import { ExerciseContext } from "@/context/exerciseContext";
+import { IExerciseContextType } from "@/types/ExerciseContextType";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useContext } from "react";
 
 const Navigation = () => {
+    const {addTodayPlan, saveForLater,} = useContext(ExerciseContext) as IExerciseContextType;
     const pathname = usePathname();
     const navLink = (
         <>
-        <li>
-            <Link
-            href="/"
-            className={`px-4 py-2 rounded-full transition-all duration-200 ${
-                pathname === "/"
-                ? "text-[#CCFF00]"
-                : "text-[#D1D5DB] hover:text-[#CCFF00]"
-            }`}
-            >
-            Workouts
-            </Link>
-        </li>
+        <li><Link href="/" className={`px-4 py-2 rounded-full transition-all duration-200 ${ pathname === "/" ? "text-[#CCFF00]" : "text-[#D1D5DB] hover:text-[#CCFF00]" }`} > Workouts </Link></li>
 
-        <li>
-            <Link
-            href="/my-plan"
-            className={`px-4 py-2 rounded-full transition-all duration-200 ${
-                pathname === "/my-plan"
-                ? "text-[#CCFF00]"
-                : "text-[#D1D5DB] hover:text-[#CCFF00]"
-            }`}
-            >
-            My Plan
-            </Link>
-        </li>
+
+        <li> <Link href="/my-plan" className={`px-4 py-2 rounded-full transition-all duration-200 ${ pathname === "/my-plan" ? "text-[#CCFF00]" : "text-[#D1D5DB] hover:text-[#CCFF00]" }`} > My Plan </Link></li>
         </>
     );
 
@@ -93,27 +76,29 @@ const Navigation = () => {
                 </div>
 
                 <div className="navbar-end">
-                <div className="flex items-center gap-2 sm:gap-4">
+                <div className="flex items-end md:items-center gap-2 sm:gap-4">
                     <Link
-                    href="/my-plan"
-                    className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                        pathname === "/my-plan"
-                        ? " text-[#CCFF00]"
-                        : "text-[#D1D5DB] hover:text-[#CCFF00]"
-                    }`}
+                        href="/my-plan"
+                        className="group flex items-center gap-2 py-2 transition-all duration-200 hover:border-[#CCFF00]"
                     >
-                    Plan
+                        <span className="text-sm font-medium text-white group-hover:text-[#CCFF00]">
+                            Plan
+                        </span>
+                        <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-[#CCFF00] px-1.5 text-xs font-bold text-black">
+                            {addTodayPlan.length}
+                        </span>
                     </Link>
-
                     <Link
-                    href="/saved"
-                    className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                        pathname === "/saved"
-                        ? " text-[#CCFF00]"
-                        : "text-[#D1D5DB] hover:text-[#CCFF00]"
-                    }`}
+                        href="/my-plan"
+                        className="group flex items-center gap-2  py-2 transition-all duration-200 hover:border-white"
                     >
-                    Saved
+                        <span className="text-sm font-medium text-gray-300 group-hover:text-white">
+                            Saved
+                        </span>
+
+                        <span className="flex h-6 min-w-6 items-center justify-center rounded-full border border-gray-500 bg-black px-1.5 text-xs font-bold text-white">
+                            {saveForLater.length}
+                        </span>
                     </Link>
                 </div>
                 </div>

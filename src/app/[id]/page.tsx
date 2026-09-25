@@ -1,4 +1,4 @@
-import { IExercise } from "@/types/exercise";
+import { IExercise } from "@/types/exerciseType";
 import ExerciseLibrary from "../components/api/apifetch";
 import ExerciseLibDetailsCard from "../components/workouts/ExerciseLibDetailsCard";
 
