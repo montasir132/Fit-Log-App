@@ -1,5 +1,5 @@
-import ExerciseLibrary from "../components/api/apifetch";
-import ExerciseLibDetailsCard from "../components/workouts/ExerciseLibDetailsCard";
+import ExerciseLibrary from "../../components/api/apiFetch";
+import ExerciseLibDetailsCard from "../../components/workouts/ExerciseLibDetailsCard";
 import { notFound } from "next/navigation";
 
 interface ExerciseLibDetailsProps {
@@ -12,9 +12,9 @@ const ExerciseLibDetailsPage = async ({ params }: ExerciseLibDetailsProps) => {
   //   console.log(id);
   const exerciseData = await ExerciseLibrary(); // fetch
   //   console.log(BooksData);
-  
+
   const exercise = exerciseData.find(
-    (exercise) => String(exercise.id) === String(id)
+    (exercise) => String(exercise.id) === String(id),
   );
   if (!exercise) {
     notFound();
