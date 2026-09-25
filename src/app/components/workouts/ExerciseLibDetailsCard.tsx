@@ -6,20 +6,7 @@ interface IExerciseLibDetailsProps {
   exercise: IExercise;
 }
 const ExerciseLibDetailsCard = ({ exercise }: IExerciseLibDetailsProps) => {
-  const {
-    image,
-    name,
-    muscleGroups,
-    equipment,
-    difficulty,
-    duration,
-    caloriesBurned,
-    sets,
-    reps,
-    rating,
-    description,
-    instructions,
-  } = exercise;
+  const {image,name,muscleGroups,equipment,difficulty,duration,caloriesBurned,sets,reps,rating,description,instructions,} = exercise;
 
   const stats: { label: string; value: string | number }[] = [
     { label: "Equipment", value: equipment },

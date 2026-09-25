@@ -1,6 +1,6 @@
-import { IExercise } from "@/types/exerciseType";
 import ExerciseLibrary from "../components/api/apifetch";
 import ExerciseLibDetailsCard from "../components/workouts/ExerciseLibDetailsCard";
+import { notFound } from "next/navigation";
 
 interface ExerciseLibDetailsProps {
   params: Promise<{
@@ -12,10 +12,13 @@ const ExerciseLibDetailsPage = async ({ params }: ExerciseLibDetailsProps) => {
   //   console.log(id);
   const exerciseData = await ExerciseLibrary(); // fetch
   //   console.log(BooksData);
+  
   const exercise = exerciseData.find(
-    (exercise) => String(exercise.id) === String(id),
-  ) as IExercise;
-  //   console.log(exercise);
+    (exercise) => String(exercise.id) === String(id)
+  );
+  if (!exercise) {
+    notFound();
+  }
   return <ExerciseLibDetailsCard exercise={exercise} />;
 };
 
