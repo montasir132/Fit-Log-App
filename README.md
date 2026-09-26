@@ -1,3 +1,4 @@
+<!-- https://workout-library-nine.vercel.app/ -->
 # 🏋️ FITLOG — Workout Library
 
 > **Train with intent. Log every set.**
@@ -147,42 +148,7 @@ src/
 
 ## 🔄 Main User Flow
 
-```text
-                         🏋️ FITLOG
-                            │
-                            ▼
-                    🏠 Workout Library
-                            │
-                            ▼
-                    Browse Exercises
-                            │
-             ┌──────────────┼──────────────┐
-             │              │              │
-             ▼              ▼              ▼
-        View Details    Add to Plan    Save for Later
-             │              │              │
-             ▼              ▼              │
-      Exercise Details   Today's Plan ◄────┘
-                            │
-                            ▼
-                       📋 My Plan
-                            │
-                  ┌─────────┴─────────┐
-                  │                   │
-                  ▼                   ▼
-             Today's Plan          Saved
-                  │                   │
-          ┌───────┴───────┐           │
-          │               │           │
-          ▼               ▼           ▼
-       Mark Done        Remove    Add to Plan
-          │               │           │
-          ▼               │           │
-    Completed Toast       │           │
-                          │           │
-                          └───────────┘
-
----
+![Main User Flow](/public/diagram.png)
 
 ## 📱 Responsive Design
 
